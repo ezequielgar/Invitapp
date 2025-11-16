@@ -286,7 +286,7 @@ function App() {
           }}
         >
           <motion.img
-            src="/src/img/ciervo.png"
+            src="./src/img/ciervo.png"
             alt="Decoración de ciervo"
             className="w-full h-auto drop-shadow-2xl"
             whileHover={{ 
@@ -318,6 +318,21 @@ function App() {
               <p className="font-poppins text-lg text-gray-600 mb-6">
                 {CONFIG.ubicacion.direccion}
               </p>
+              
+              {/* Google Maps Embed */}
+              <div className="mb-6 rounded-2xl overflow-hidden shadow-md">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d222.55913280319893!2d-65.24653412943039!3d-26.809844025220684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225dfb45eb9c65%3A0xba05cb24294d5fb4!2sTiki!5e0!3m2!1ses-419!2sar!4v1763322169953!5m2!1ses-419!2sar" 
+                  width="100%" 
+                  height="400" 
+                  style={{ border: 0 }}
+                  allowFullScreen="" 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="rounded-2xl"
+                ></iframe>
+              </div>
+
               <a
                 href={CONFIG.ubicacion.googleMapsUrl}
                 target="_blank"
