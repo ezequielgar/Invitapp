@@ -262,6 +262,42 @@ function App() {
         <div className="absolute bottom-20 right-10 w-40 h-40 bg-pastel-pink/30 rounded-full blur-3xl"></div>
       </motion.section>
 
+      {/* DEER IMAGE SECTION - Parallax Effect */}
+      <motion.section 
+        className="relative py-20 overflow-hidden bg-gradient-to-b from-pink-50 to-white"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <motion.div
+          initial={{ y: -100, opacity: 0, scale: 0.8 }}
+          whileInView={{ y: 0, opacity: 1, scale: 1 }}
+          transition={{ 
+            duration: 1.2,
+            ease: "easeOut",
+            type: "spring",
+            damping: 12
+          }}
+          viewport={{ once: true }}
+          className="max-w-md mx-auto px-6"
+          style={{
+            willChange: "transform"
+          }}
+        >
+          <motion.img
+            src="/src/img/ciervo.png"
+            alt="Decoración de ciervo"
+            className="w-full h-auto drop-shadow-2xl"
+            whileHover={{ 
+              scale: 1.05,
+              rotate: [0, -2, 2, 0],
+              transition: { duration: 0.5 }
+            }}
+          />
+        </motion.div>
+      </motion.section>
+
       {/* UBICACIÓN SECTION */}
       <section className="py-16 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
