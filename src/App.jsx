@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './App.css';
+import ciervoImg from './img/ciervo.png';
 
 // Componente de Confeti
 const Confetti = () => {
@@ -82,9 +83,9 @@ const CONFIG = {
   fechaEvento: "2025-12-12T20:00:00", // Formato: YYYY-MM-DDTHH:MM:SS para el contador
   hora: "20:00 a 23:00 hs",
   ubicacion: {
-    nombre: "Salón de Eventos La Terraza",
-    direccion: "Av. Principal 1234, Tucumán",
-    googleMapsUrl: "https://maps.google.com/?q=Salon+de+Eventos+La+Terraza+Tucuman"
+    nombre: "Tiki",
+    direccion: "Av. Manuel Belgrano 3466, San Miguel de Tucumán, Tucumán",
+    googleMapsUrl: "https://www.google.com/maps/place/Tiki/@-26.809844,-65.2465341,20z/data=!4m6!3m5!1s0x94225dfb45eb9c65:0xba05cb24294d5fb4!8m2!3d-26.8098447!4d-65.2465341!16s%2Fg%2F11lt8cmr8y?entry=ttu"
   },
   whatsapp: {
     numero: "5493815231386", // Formato: 549 + código de área + número (sin 0 ni 15)
@@ -286,7 +287,7 @@ function App() {
           }}
         >
           <motion.img
-            src="./src/img/ciervo.png"
+            src={ciervoImg}
             alt="Decoración de ciervo"
             className="w-full h-auto drop-shadow-2xl"
             whileHover={{ 
