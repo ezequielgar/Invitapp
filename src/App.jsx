@@ -171,7 +171,7 @@ function App() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
         className="relative min-h-[70vh] flex items-center justify-center overflow-hidden"
-        style={{ backgroundImage: 'linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%)' }}
+        style={{ backgroundImage: 'linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%)' }}
       >
         {/* Fondo con imagen difuminada */}
         <div className="absolute inset-0 backdrop-blur-sm"></div>
