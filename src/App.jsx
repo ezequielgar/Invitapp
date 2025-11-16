@@ -79,15 +79,15 @@ const CONFIG = {
   nombre: "Alfonsina",
   edad: "1 añito",
   fecha: "12 de Diciembre, 2025",
-  fechaEvento: "2025-12-12T18:00:00", // Formato: YYYY-MM-DDTHH:MM:SS para el contador
-  hora: "18:00 hs",
+  fechaEvento: "2025-12-12T20:00:00", // Formato: YYYY-MM-DDTHH:MM:SS para el contador
+  hora: "20:00 a 23:00 hs",
   ubicacion: {
     nombre: "Salón de Eventos La Terraza",
     direccion: "Av. Principal 1234, Tucumán",
     googleMapsUrl: "https://maps.google.com/?q=Salon+de+Eventos+La+Terraza+Tucuman"
   },
   whatsapp: {
-    numero: "5493811234567", // Formato: 549 + código de área + número (sin 0 ni 15)
+    numero: "5493815231386", // Formato: 549 + código de área + número (sin 0 ni 15)
     mensaje: "¡Hola! Confirmo mi asistencia al primer cumpleaños de Alfonsina 🎂�"
   },
   imagenes: [
@@ -171,9 +171,10 @@ function App() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
         className="relative min-h-[70vh] flex items-center justify-center overflow-hidden"
+        style={{ backgroundImage: 'linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%)' }}
       >
         {/* Fondo con imagen difuminada */}
-        <div className="absolute inset-0 bg-gradient-to-br from-beige-100/90 via-pastel-cream/80 to-pastel-pink/60 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 backdrop-blur-sm"></div>
         
         {/* Contenido */}
         <div className="relative z-10 text-center px-6 py-12 max-w-4xl mx-auto">
@@ -183,7 +184,8 @@ function App() {
             transition={{ delay: 0.2, duration: 0.8 }}
           >
             <motion.h1 
-              className="font-playfair text-5xl md:text-7xl font-bold text-gray-800 mb-4"
+              className="text-5xl md:text-7xl text-gray-800 mb-4"
+              style={{ fontFamily: 'Beauty13, cursive' }}
               animate={{ 
                 scale: [1, 1.05, 1],
               }}
@@ -193,7 +195,7 @@ function App() {
                 repeatDelay: 1
               }}
             >
-              ¡Estás invitado al cumpleaños de {CONFIG.nombre}!
+              ¡Estás invitado al cumpleaños de <span style={{ fontFamily: 'Beauty, cursive' }}>{CONFIG.nombre}</span>!
             </motion.h1>
             <motion.p 
               className="font-poppins text-3xl md:text-4xl text-pink-600 font-bold mb-6"
@@ -270,7 +272,7 @@ function App() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-800 mb-8">
+            <h2 className="text-4xl md:text-5xl text-gray-800 mb-8" style={{ fontFamily: 'Beauty13, cursive' }}>
               📍 Ubicación
             </h2>
             <div className="bg-beige-50 rounded-3xl p-8 shadow-lg">
@@ -302,7 +304,7 @@ function App() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+            <h2 className="text-4xl md:text-5xl text-gray-800 mb-6" style={{ fontFamily: 'Beauty13, cursive' }}>
               Confirmá tu asistencia
             </h2>
             <p className="font-poppins text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
@@ -331,7 +333,8 @@ function App() {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="font-playfair text-4xl md:text-5xl font-bold text-gray-800 text-center mb-16"
+            className="text-4xl md:text-5xl text-gray-800 text-center mb-16"
+            style={{ fontFamily: 'Beauty13, cursive' }}
           >
             Momentos especiales
           </motion.h2>
@@ -376,7 +379,7 @@ function App() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="font-playfair text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+            <h3 className="text-3xl md:text-4xl text-gray-800 mb-6" style={{ fontFamily: 'Beauty13, cursive' }}>
               ¡Te esperamos para festejar juntos!
             </h3>
             <p className="font-poppins text-lg text-gray-600 mb-8">
