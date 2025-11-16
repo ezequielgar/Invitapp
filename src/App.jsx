@@ -78,7 +78,7 @@ const FloatingBalloons = () => {
 // ========== CONFIGURACIÓN PERSONALIZABLE ==========
 const CONFIG = {
   nombre: "Alfonsina",
-  edad: "1 añito",
+  edad: "1 AÑITO",
   fecha: "12 de Diciembre, 2025",
   fechaEvento: "2025-12-12T20:00:00", // Formato: YYYY-MM-DDTHH:MM:SS para el contador
   hora: "20:00 a 23:00 hs",
@@ -172,7 +172,7 @@ function App() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
         className="relative min-h-[70vh] flex items-center justify-center overflow-hidden"
-        style={{ backgroundImage: 'linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%)' }}
+        style={{ backgroundImage: 'linear-gradient(45deg, #ee9ca7 0%, #ffdde1 100%)' }}
       >
         {/* Fondo con imagen difuminada */}
         <div className="absolute inset-0 backdrop-blur-sm"></div>
@@ -196,7 +196,7 @@ function App() {
                 repeatDelay: 1
               }}
             >
-              ¡Estás invitado al cumpleaños de <span style={{ fontFamily: 'Beauty, cursive' }}>{CONFIG.nombre}</span>!
+              ¡Estás invitado al cumple de <span style={{ fontFamily: 'Beauty, cursive' }}>{CONFIG.nombre}</span>!
             </motion.h1>
             <motion.p 
               className="font-poppins text-3xl md:text-4xl text-pink-600 font-bold mb-6"
@@ -212,10 +212,10 @@ function App() {
               ¡{CONFIG.edad}! 🎂
             </motion.p>
             <div className="space-y-2">
-              <p className="font-poppins text-2xl md:text-3xl text-gray-700">
+              <p className="text-2xl md:text-3xl text-gray-700" style={{ fontFamily: 'Beauty13, cursive' }}>
                 {CONFIG.fecha}
               </p>
-              <p className="font-poppins text-xl md:text-2xl text-gray-600">
+              <p className="text-xl md:text-2xl text-gray-600" style={{ fontFamily: 'Beauty13, cursive' }}>
                 {CONFIG.hora}
               </p>
             </div>
@@ -265,7 +265,8 @@ function App() {
 
       {/* DEER IMAGE SECTION - Parallax Effect */}
       <motion.section 
-        className="relative py-20 overflow-hidden bg-gradient-to-b from-pink-50 to-white"
+        className="relative py-20 overflow-hidden"
+        style={{ backgroundImage: 'linear-gradient(45deg, #ee9ca7 0%, #ffdde1 100%)' }}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -300,7 +301,7 @@ function App() {
       </motion.section>
 
       {/* UBICACIÓN SECTION */}
-      <section className="py-16 px-6 bg-white">
+      <section className="py-16 px-6" style={{ backgroundImage: 'linear-gradient(45deg, #ee9ca7 0%, #ffdde1 100%)' }}>
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ y: 50, opacity: 0 }}
@@ -348,7 +349,7 @@ function App() {
       </section>
 
       {/* RSVP SECTION */}
-      <section className="py-16 px-6 bg-gradient-to-br from-beige-50 to-pastel-peach/20">
+      <section className="py-16 px-6" style={{ backgroundImage: 'linear-gradient(45deg, #ee9ca7 0%, #ffdde1 100%)' }}>
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ y: 50, opacity: 0 }}
@@ -378,18 +379,40 @@ function App() {
       </section>
 
       {/* GALERÍA POLAROID */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-20 px-6" style={{ backgroundImage: 'linear-gradient(45deg, #ee9ca7 0%, #ffdde1 100%)' }}>
         <div className="max-w-6xl mx-auto">
-          <motion.h2
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6 }}
+          {/* Línea divisora decorativa */}
+          <motion.div
+            initial={{ scaleX: 0, opacity: 0 }}
+            whileInView={{ scaleX: 1, opacity: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl text-gray-800 text-center mb-16"
-            style={{ fontFamily: 'Beauty13, cursive' }}
+            className="flex items-center justify-center mb-16"
           >
-            Momentos especiales
-          </motion.h2>
+            <motion.div 
+              className="h-1 bg-gradient-to-r from-transparent via-pink-400 to-transparent w-full max-w-3xl rounded-full"
+              animate={{ 
+                opacity: [0.5, 1, 0.5],
+              }}
+              transition={{ 
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            >
+              <motion.div
+                className="h-full bg-gradient-to-r from-pink-300 via-rose-400 to-pink-300 rounded-full"
+                animate={{
+                  x: ['-100%', '100%']
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+              />
+            </motion.div>
+          </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
             {CONFIG.imagenes.map((img, index) => (
@@ -423,7 +446,7 @@ function App() {
       </section>
 
       {/* FOOTER */}
-      <footer className="py-16 px-6 bg-gradient-to-br from-beige-100 to-beige-50">
+      <footer className="py-16 px-6" style={{ backgroundImage: 'linear-gradient(45deg, #ee9ca7 0%, #ffdde1 100%)' }}>
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
