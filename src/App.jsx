@@ -8,6 +8,7 @@ import img3 from './img/3.jpeg';
 import img4 from './img/4.jpeg';
 import img5 from './img/5.jpeg';
 import img6 from './img/6.jpeg';
+import video1 from './img/video 1.mp4';
 
 // Componente de Confeti
 const Confetti = () => {
@@ -369,6 +370,35 @@ function App() {
             <p className="font-poppins text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
               Nos encantaría contar con tu presencia. Por favor, confirmanos por WhatsApp.
             </p>
+
+            {/* Video Polaroid */}
+            <motion.div
+              initial={{ y: 30, opacity: 0, rotate: -2 }}
+              whileInView={{ y: 0, opacity: 1, rotate: -2 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              whileHover={{ 
+                scale: 1.05, 
+                rotate: 0,
+                transition: { duration: 0.3 }
+              }}
+              className="polaroid inline-block mb-8 max-w-md mx-auto"
+            >
+              <div className="polaroid-inner">
+                <video 
+                  src={video1}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-64 object-cover rounded"
+                />
+                <div className="polaroid-caption text-2xl">
+                  💝
+                </div>
+              </div>
+            </motion.div>
+
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
