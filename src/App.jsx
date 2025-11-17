@@ -111,12 +111,31 @@ const CONFIG = {
 function App() {
   const [copiedLink, setCopiedLink] = useState(false);
   const [showConfetti, setShowConfetti] = useState(true);
+  const [displayedName, setDisplayedName] = useState('');
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
     minutes: 0,
     seconds: 0
   });
+
+  // Efecto de escritura a mano para el nombre
+  useEffect(() => {
+    let currentIndex = 0;
+    const name = CONFIG.nombre;
+    const typingSpeed = 200; // Velocidad más natural, como escribir a mano
+
+    const timer = setInterval(() => {
+      if (currentIndex <= name.length) {
+        setDisplayedName(name.slice(0, currentIndex));
+        currentIndex++;
+      } else {
+        clearInterval(timer);
+      }
+    }, typingSpeed);
+
+    return () => clearInterval(timer);
+  }, []);
 
   // Ocultar confeti después de 5 segundos
   useEffect(() => {
@@ -203,7 +222,7 @@ function App() {
                 repeatDelay: 1
               }}
             >
-              ¡Estás invitado al cumple de <span style={{ fontFamily: 'Beauty, cursive' }}>{CONFIG.nombre}</span>!
+              ¡Estás invitado al cumple de <span style={{ fontFamily: 'Beauty, cursive' }} className="handwritten-text">{displayedName}</span>!
             </motion.h1>
             <motion.p 
               className="font-poppins text-3xl md:text-4xl text-pink-600 font-bold mb-6"
