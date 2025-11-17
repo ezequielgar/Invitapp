@@ -2,6 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './App.css';
 import ciervoImg from './img/ciervo.png';
+import img1 from './img/1.jpeg';
+import img2 from './img/2.jpeg';
+import img3 from './img/3.jpeg';
+import img4 from './img/4.jpeg';
+import img5 from './img/5.jpeg';
+import img6 from './img/6.jpeg';
 
 // Componente de Confeti
 const Confetti = () => {
@@ -92,12 +98,12 @@ const CONFIG = {
     mensaje: "¡Hola! Confirmo mi asistencia al primer cumpleaños de Alfonsina 🎂�"
   },
   imagenes: [
-    "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=400&h=500&fit=crop",
-    "https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=400&h=500&fit=crop",
-    "https://images.unsplash.com/photo-1513151233558-d860c5398176?w=400&h=500&fit=crop",
-    "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=400&h=500&fit=crop",
-    "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=400&h=500&fit=crop",
-    "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=500&fit=crop"
+    img1,
+    img2,
+    img3,
+    img4,
+    img5,
+    img6
   ]
 };
 
