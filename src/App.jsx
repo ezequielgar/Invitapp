@@ -409,23 +409,6 @@ function App() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <motion.div
-                animate={{ 
-                  rotate: [0, 5, -5, 0],
-                }}
-                transition={{ 
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="text-6xl mb-4"
-              >
-                🎵
-              </motion.div>
-              <h3 className="text-3xl md:text-4xl text-gray-800 mb-6" style={{ fontFamily: 'Beauty13, cursive' }}>
-                Mirá el video especial
-              </h3>
-              
               {/* YouTube Player con autoplay */}
               <motion.div 
                 className="bg-white/90 backdrop-blur-sm rounded-3xl p-4 md:p-6 shadow-2xl"
@@ -662,9 +645,6 @@ function App() {
             <h3 className="text-3xl md:text-4xl text-gray-800 mb-6" style={{ fontFamily: 'Beauty13, cursive' }}>
               ¡Te esperamos para festejar juntos!
             </h3>
-            <p className="font-poppins text-lg text-gray-600 mb-8">
-              Tu presencia es el mejor regalo
-            </p>
             
             {/* Botón compartir */}
             <motion.button
