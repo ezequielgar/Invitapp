@@ -326,6 +326,73 @@ function App() {
         </motion.div>
       </motion.section>
 
+      {/* MUSIC SECTION */}
+      <section className="py-16 px-6" style={{ backgroundImage: 'linear-gradient(45deg, #ee9ca7 0%, #ffdde1 100%)' }}>
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <motion.div
+                animate={{ 
+                  rotate: [0, 5, -5, 0],
+                }}
+                transition={{ 
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="text-6xl mb-4"
+              >
+                🎵
+              </motion.div>
+              <h3 className="text-3xl md:text-4xl text-gray-800 mb-6" style={{ fontFamily: 'Beauty13, cursive' }}>
+                Mirá el video especial
+              </h3>
+              
+              {/* YouTube Player con autoplay */}
+              <motion.div 
+                className="bg-white/90 backdrop-blur-sm rounded-3xl p-4 md:p-6 shadow-2xl"
+                whileHover={{ scale: 1.01 }}
+                transition={{ duration: 0.3 }}
+                initial={{ scale: 0.9, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+              >
+                <div className="rounded-2xl overflow-hidden shadow-lg aspect-video">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/KQetemT1sWc?autoplay=1&mute=1&loop=1&playlist=KQetemT1sWc&controls=1"
+                    title="Video especial"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  ></iframe>
+                </div>
+              </motion.div>
+              
+              <motion.div
+                animate={{ 
+                  scale: [1, 1.1, 1],
+                }}
+                transition={{ 
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="mt-6 text-pink-500 text-2xl"
+              >
+                ♪♫•*¨*•.¸¸♫♪
+              </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* UBICACIÓN SECTION */}
       <section className="py-16 px-6" style={{ backgroundImage: 'linear-gradient(45deg, #ee9ca7 0%, #ffdde1 100%)' }}>
         <div className="max-w-4xl mx-auto">
