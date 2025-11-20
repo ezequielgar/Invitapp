@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './App.css';
 import ciervoImg from './img/ciervo.png';
+import fifiSun from './img/fifi_sun.png';
 import img1 from './img/1.jpeg';
 import img2 from './img/2.jpeg';
 import img3 from './img/3.jpeg';
@@ -327,7 +328,79 @@ function App() {
       </motion.section>
 
       {/* MUSIC SECTION */}
-      <section className="py-16 px-6" style={{ backgroundImage: 'linear-gradient(45deg, #ee9ca7 0%, #ffdde1 100%)' }}>
+      <section className="py-16 px-6 relative" style={{ backgroundImage: 'linear-gradient(45deg, #ee9ca7 0%, #ffdde1 100%)' }}>
+        {/* Fifi Sun bailando a la izquierda */}
+        <motion.div
+          className="absolute left-4 md:left-20 top-1/2 -translate-y-1/2 w-16 md:w-24 hidden md:block"
+          animate={{
+            y: [0, -20, 0],
+            rotate: [0, 10, -10, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
+          <AnimatePresence mode="wait">
+            <motion.img
+              key="fifi-left"
+              src={fifiSun}
+              alt="Fifi Sun"
+              className="w-full h-auto drop-shadow-xl"
+              animate={{
+                scale: [1, 1, 1, 0],
+                rotate: [0, 360, 720, 1080],
+                opacity: [1, 1, 1, 0],
+              }}
+              transition={{
+                duration: 6,
+                times: [0, 0.7, 0.85, 1],
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+          </AnimatePresence>
+        </motion.div>
+
+        {/* Fifi Sun bailando a la derecha */}
+        <motion.div
+          className="absolute right-4 md:right-20 top-1/2 -translate-y-1/2 w-16 md:w-24 hidden md:block"
+          animate={{
+            y: [0, -20, 0],
+            rotate: [0, -10, 10, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1
+          }}
+        >
+          <AnimatePresence mode="wait">
+            <motion.img
+              key="fifi-right"
+              src={fifiSun}
+              alt="Fifi Sun"
+              className="w-full h-auto drop-shadow-xl"
+              animate={{
+                scale: [1, 1, 1, 0],
+                rotate: [0, -360, -720, -1080],
+                opacity: [1, 1, 1, 0],
+              }}
+              transition={{
+                duration: 6,
+                times: [0, 0.7, 0.85, 1],
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1
+              }}
+            />
+          </AnimatePresence>
+        </motion.div>
+
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ y: 50, opacity: 0 }}
@@ -468,20 +541,26 @@ function App() {
                 rotate: 0,
                 transition: { duration: 0.3 }
               }}
-              className="polaroid inline-block mb-8 max-w-md mx-auto"
+              className="polaroid inline-block mb-12 md:mb-16 max-w-md mx-auto"
             >
               <div className="polaroid-inner">
                 <video 
                   ref={(el) => {
                     if (el) {
                       el.volume = 0.15; // Volumen al 15%
+                      // Al hacer clic, activar sonido
+                      el.addEventListener('click', () => {
+                        el.muted = false;
+                      });
                     }
                   }}
                   src={video1}
                   autoPlay
                   loop
+                  muted
                   playsInline
-                  className="w-full h-64 object-cover rounded"
+                  className="w-full h-64 object-cover rounded cursor-pointer"
+                  title="Haz clic para activar el sonido"
                 />
                 <div className="polaroid-caption text-2xl">
                   💝
