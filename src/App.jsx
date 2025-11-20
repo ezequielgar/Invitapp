@@ -329,79 +329,81 @@ function App() {
 
       {/* MUSIC SECTION */}
       <section className="py-16 px-6 relative" style={{ backgroundImage: 'linear-gradient(45deg, #ee9ca7 0%, #ffdde1 100%)' }}>
-        {/* Fifi Sun bailando a la izquierda */}
-        <motion.div
-          className="absolute left-4 md:left-20 top-1/2 -translate-y-1/2 w-16 md:w-24 hidden md:block"
-          animate={{
-            y: [0, -20, 0],
-            rotate: [0, 10, -10, 0],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        >
-          <AnimatePresence mode="wait">
-            <motion.img
-              key="fifi-left"
-              src={fifiSun}
-              alt="Fifi Sun"
-              className="w-full h-auto drop-shadow-xl"
+        <div className="max-w-4xl mx-auto">
+          {/* Fifi Sun bailando - Arriba del video en mobile y desktop */}
+          <div className="flex justify-center items-center gap-4 sm:gap-8 md:gap-16 mb-8">
+            {/* Fifi Sun izquierda */}
+            <motion.div
+              className="w-12 sm:w-16 md:w-20 lg:w-24"
               animate={{
-                scale: [1, 1, 1, 0],
-                rotate: [0, 360, 720, 1080],
-                opacity: [1, 1, 1, 0],
+                y: [0, -15, 0],
+                rotate: [0, 10, -10, 0],
+                scale: [1, 1.1, 1],
               }}
               transition={{
-                duration: 6,
-                times: [0, 0.7, 0.85, 1],
+                duration: 2,
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-            />
-          </AnimatePresence>
-        </motion.div>
+            >
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key="fifi-left"
+                  src={fifiSun}
+                  alt="Fifi Sun"
+                  className="w-full h-auto drop-shadow-xl"
+                  animate={{
+                    scale: [1, 1, 1, 0],
+                    rotate: [0, 360, 720, 1080],
+                    opacity: [1, 1, 1, 0],
+                  }}
+                  transition={{
+                    duration: 6,
+                    times: [0, 0.7, 0.85, 1],
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+              </AnimatePresence>
+            </motion.div>
 
-        {/* Fifi Sun bailando a la derecha */}
-        <motion.div
-          className="absolute right-4 md:right-20 top-1/2 -translate-y-1/2 w-16 md:w-24 hidden md:block"
-          animate={{
-            y: [0, -20, 0],
-            rotate: [0, -10, 10, 0],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1
-          }}
-        >
-          <AnimatePresence mode="wait">
-            <motion.img
-              key="fifi-right"
-              src={fifiSun}
-              alt="Fifi Sun"
-              className="w-full h-auto drop-shadow-xl"
+            {/* Fifi Sun derecha */}
+            <motion.div
+              className="w-12 sm:w-16 md:w-20 lg:w-24"
               animate={{
-                scale: [1, 1, 1, 0],
-                rotate: [0, -360, -720, -1080],
-                opacity: [1, 1, 1, 0],
+                y: [0, -15, 0],
+                rotate: [0, -10, 10, 0],
+                scale: [1, 1.1, 1],
               }}
               transition={{
-                duration: 6,
-                times: [0, 0.7, 0.85, 1],
+                duration: 2,
                 repeat: Infinity,
                 ease: "easeInOut",
                 delay: 1
               }}
-            />
-          </AnimatePresence>
-        </motion.div>
-
-        <div className="max-w-4xl mx-auto">
+            >
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key="fifi-right"
+                  src={fifiSun}
+                  alt="Fifi Sun"
+                  className="w-full h-auto drop-shadow-xl"
+                  animate={{
+                    scale: [1, 1, 1, 0],
+                    rotate: [0, -360, -720, -1080],
+                    opacity: [1, 1, 1, 0],
+                  }}
+                  transition={{
+                    duration: 6,
+                    times: [0, 0.7, 0.85, 1],
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 1
+                  }}
+                />
+              </AnimatePresence>
+            </motion.div>
+          </div>
           <motion.div
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
