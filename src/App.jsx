@@ -472,10 +472,14 @@ function App() {
             >
               <div className="polaroid-inner">
                 <video 
+                  ref={(el) => {
+                    if (el) {
+                      el.volume = 0.15; // Volumen al 15%
+                    }
+                  }}
                   src={video1}
                   autoPlay
                   loop
-                  muted
                   playsInline
                   className="w-full h-64 object-cover rounded"
                 />
